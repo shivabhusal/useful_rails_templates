@@ -1,4 +1,7 @@
 
+# This runs well with Rails 5.0 +
+
+run "spring stop"
 gem 'annotate'
 
 gem_group :development, :test do
@@ -18,20 +21,20 @@ end
 
 environment <<-CONFIG 
 config.generators do |generators|
-  generators.test_framework  :rspec, fixture: false
-  generators.javascripts false
-  generators.helper false
-  generators.view_specs false
-  generators.helper_specs false
-  generators.controller_specs true
+      generators.test_framework  :rspec, fixture: false
+      generators.javascripts false
+      generators.helper false
+      generators.view_specs false
+      generators.helper_specs false
+      generators.controller_specs true
 
-  generators.model_specs true
-  generators.fixtures false
+      generators.model_specs true
+      generators.fixtures false
 
-  generators.stylesheets false
-  generators.decorator_specs false
-  generators.decorator false
-end
+      generators.stylesheets false
+      generators.decorator_specs false
+      generators.decorator false
+    end
 CONFIG
 
 file 'spec/support/database_cleaner_config.rb', <<-CODE
@@ -69,4 +72,4 @@ end
 CODE
 
 run "bundle install"
-run "rails g rspec:install"
+generate('rspec:install')
