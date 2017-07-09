@@ -11,6 +11,9 @@ You can use these templates on already existing application as well.
 
 ```bash
 $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/test_template.rb
+
+# Short Form
+$ rails app:template LOCATION=https://goo.gl/f6P7ne
 ```
 Make sure you are on root directory of your application.
 **OUTPUT**
@@ -66,16 +69,25 @@ This is pretty useful when you generated your app without specifying `-d=databas
  #### For MySQL
  ```bash
  $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/database_template.rb db=mysql
+ 
+ # Short Form
+ $ rails app:template LOCATION=https://goo.gl/9s8NV6 db=mysql
  ```
  
  #### For PG
  ```bash
  $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/database_template.rb db=pg
+ 
+ # Short form
+ $ rails app:template LOCATION=https://goo.gl/9s8NV6 db=pg
  ```
 
  #### For SQLite3
  ```bash
  $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/database_template.rb db=sqlite
+ 
+ # Short form
+ $ rails app:template LOCATION=https://goo.gl/9s8NV6 db=sqlite
  ```
  
  **OUTPUT**
