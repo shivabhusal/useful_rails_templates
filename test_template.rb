@@ -1,8 +1,13 @@
 
 # This runs well with Rails 5.0 +
 
-run "spring stop"
-gem 'annotate'
+run 'spring stop'
+
+gem 'slim-rails'
+
+gem_group :development do
+  gem 'annotate'
+end
 
 gem_group :development, :test do
   gem 'zeus', require: false
