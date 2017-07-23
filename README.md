@@ -37,7 +37,7 @@ This will do the following
 $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/test_template.rb
 
 # Short Form
-$ rails app:template LOCATION=https://goo.gl/f6P7ne
+$ rails app:template LOCATION=https://goo.gl/f6P7ne app_setup=true
 ```
 Make sure you are on root directory of your application.
 
@@ -72,7 +72,7 @@ This is pretty useful when you generated your app without specifying `-d=databas
  $ rails app:template LOCATION=https://goo.gl/9s8NV6 db=sqlite
  ```
 
-## Mailer setup
+## Mailer setup :email:
 Will add gem `premailer-rails` to Gemfile and set config in `config/application.rb`.
 Use command
 ```bash
