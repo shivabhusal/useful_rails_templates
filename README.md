@@ -9,8 +9,9 @@ for some useful templates that can be useful for others as well.
   - [Basic Scaffold for App setup [For Dev and Test mode]](#basic-scaffold-for-app-setup-for-dev-and-test-mode)
     - [Usage](#usage)
   - [Generate Database config `database.yml` per requirement](#generate-database-config-databaseyml-per-requirement)
-  - [Mailer setup](#mailer-setup)
+  - [Mailer setup :email:](#mailer-setup-email)
   - [Figaro Configs : config/application.yml](#figaro-configs--configapplicationyml)
+  - [Generate usable .gitignore file](#generate-usable-gitignore-file)
 
 <!-- TOC END -->
 - Examples
@@ -90,4 +91,13 @@ Use command
 
  # Short Form
  $ rails app:template LOCATION=https://goo.gl/BVvfZb figaro=true
+```
+## Generate usable .gitignore file
+Use command
+
+```bash
+ $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/gitignore_template.rb
+
+ # Short Form
+ $ rails app:template LOCATION=https://goo.gl/ukw7zK gitignore=true
 ```
