@@ -6,6 +6,7 @@ run 'spring stop'
 gem 'slim-rails'
 
 gem_group :development do
+  gem 'figaro'
   gem 'annotate'
 end
 

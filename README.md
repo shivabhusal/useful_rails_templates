@@ -144,13 +144,21 @@ production:
 `api_authentication_tutorial` is my application name.
 
 ## Mailer setup
+Will add gem `premailer-rails` to Gemfile and set config in `config/application.rb`.
+Use command
+```bash
+ $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/mailer_template.rb
+ 
+ # Short Form
+ $ rails app:template LOCATION=https://goo.gl/iG8NS9 mailer=true
+```
 
 ## Figaro Configs : config/application.yml
 Use command
 
 ```bash
  $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/figaro_template.rb
- 
+
  # Short Form
  $ rails app:template LOCATION=https://goo.gl/BVvfZb figaro=true
 ```
