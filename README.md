@@ -4,8 +4,29 @@
 You can find some very useful rails templates to generate boiler plate codes in your Rails app. You can send Pull Requests 
 for some useful templates that can be useful for others as well.
 
+<!-- TOC START min:1 max:3 link:true update:true -->
+- [Some really Useful Rails Templates](#some-really-useful-rails-templates)
+  - [Basic Scaffold for App setup [For Dev and Test mode]](#basic-scaffold-for-app-setup-for-dev-and-test-mode)
+    - [Usage](#usage)
+  - [Generate Database config `database.yml` per requirement](#generate-database-config-databaseyml-per-requirement)
+  - [Mailer setup](#mailer-setup)
+  - [Figaro Configs : config/application.yml](#figaro-configs--configapplicationyml)
+
+<!-- TOC END -->
+
 You can use these templates on already existing application as well.
-## Test Configs generation Template
+
+## Basic Scaffold for App setup [For Dev and Test mode]
+This will do the following
+- Add gems `rspec`, `slim-rails`, `annotate`, `zeus`, `pry`, 
+`rspec-rails`, `faker`, `database_cleaner`, `factory_girl_rails`,
+  `shoulda-matchers` and `rails-controller-testing` to your Gemfile. 
+  
+  > **Note**: But this will not add twice, it will add only if there is not already.
+  
+  Will add necessary config files to `spec/support/` for above mentioned gems to be used in `test-mode`. 
+  Will install the `bundle` and install RSpec as well. 
+  
 
 ### Usage
 
@@ -121,3 +142,15 @@ production:
 
  ```
 `api_authentication_tutorial` is my application name.
+
+## Mailer setup
+
+## Figaro Configs : config/application.yml
+Use command
+
+```bash
+ $ rails app:template LOCATION=https://raw.githubusercontent.com/shivabhusal/useful_rails_templates/master/figaro_template.rb
+ 
+ # Short Form
+ $ rails app:template LOCATION=https://goo.gl/BVvfZb figaro=true
+```
