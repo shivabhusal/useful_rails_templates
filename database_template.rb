@@ -73,36 +73,58 @@ SQLITE
 
 # --------------------- MS-SQL Server ------------------------------
 SQL_SERVER_CONFIG = <<-SQLSERVER
+# SQL Server (2012 or higher required)
+#
+# Install the adapters and driver
+#   gem install tiny_tds
+#   gem install activerecord-sqlserver-adapter
+#
+# Ensure the activerecord adapter and db driver gems are defined in your Gemfile
+#   gem 'tiny_tds'
+#   gem 'activerecord-sqlserver-adapter'
+#
 default: &default
   adapter: sqlserver
   encoding: utf8
+  username: sa
+  password: <%%= ENV['SA_PASSWORD'] %>
   host: localhost
-  dataserver:
-  port: 1433
-  username: arxfit
-  password: P@ssword
-  pool: 5
-  timeout: 5000
-  azure: true
-  login_timeout: 5000
 
 development:
   <<: *default
   database: <%= app_name %>_development
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: <%= app_name %>_test
+
+# As with config/secrets.yml, you never want to store sensitive information,
+# like your database password, in your source code. If your source code is
+# ever seen by anyone, they now have access to your database.
+#
+# Instead, provide the password as a unix environment variable when you boot
+# the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database
+# for a full rundown on how to provide these environment variables in a
+# production deployment.
+#
+# On Heroku and other platform providers, you may have a full connection URL
+# available as an environment variable. For example:
+#
+#   DATABASE_URL="sqlserver://myuser:mypass@localhost/somedatabase"
+#
+# You can use this database configuration with:
+#
+#   production:
+#     url: <%%= ENV['DATABASE_URL'] %>
+#
 production:
   <<: *default
-  adapter: sqlserver
-  encoding: utf8
-  host: something.database.secure.windows.net
-  dataserver:
-  port: 1433
-  username: myapp
-  password: P@ssword
-  pool: 5
-  timeout: 5000
-  azure: true
-  login_timeout: 5000
+  database: <%= app_name %>_production
+  username: <%= app_name %>
+  password: <%%= ENV['<%= app_name.upcase %>_DATABASE_PASSWORD'] %>
 SQLSERVER
 
 if ENV['db'] =~ /mysql/
@@ -120,5 +142,6 @@ else
   puts "rails app:template path/to/template.rb db=postgre"
   puts "rails app:template path/to/template.rb db=sqlite"
   puts "rails app:template path/to/template.rb db=sqlserver"
+  puts "rails app:template path/to/template.rb db=server"
 end
 
